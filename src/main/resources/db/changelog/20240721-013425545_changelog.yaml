@@ -1,0 +1,30 @@
+databaseChangeLog:
+- changeSet:
+    id: 1721525668366-3
+    author: stephenfu (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: phone_number
+            type: integer
+        tableName: users
+- changeSet:
+    id: 1721525668366-1
+    author: stephenfu (generated)
+    changes:
+    - modifyDataType:
+        columnName: email
+        newDataType: varchar(255)
+        tableName: users
+- changeSet:
+    id: 1721525668366-2
+    author: stephenfu (generated)
+    changes:
+    - modifyDataType:
+        columnName: name
+        newDataType: varchar(255)
+        tableName: users
+

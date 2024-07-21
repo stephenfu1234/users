@@ -9,5 +9,6 @@ public class UserDto {
     private final Integer id;
     private final String email;
     private final String name;
+    private final Integer phoneNumber;
 
 }

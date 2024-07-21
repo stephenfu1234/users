@@ -3,3 +3,14 @@ server:
 spring:
   application:
     name: "users"
+  datasource:
+    url: jdbc:mysql://localhost:3306/usersdb
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none # tell hibernate not to change schema as its managed by liquibase now
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
