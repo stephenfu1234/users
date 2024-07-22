@@ -3,3 +3,11 @@ databaseChangeLog:
       file: db/changelog/changelog-1.yaml
   - include:
       file: db/changelog/20240721-013425545_changelog.yaml
+  - include:
+      file: db/changelog/20240721-053042771_changelog.yaml
+  - include:
+      file: db/changelog/20240721-061800028_changelog.yaml
+  - include:
+      file: db/changelog/20240721-061800029_changelog.yaml
+  - include:
+      file: db/changelog/20240721-061800030_changelog.yaml

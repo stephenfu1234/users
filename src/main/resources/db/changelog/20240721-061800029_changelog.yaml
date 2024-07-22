@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 172154268340-1
+      author: stephen.fu
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: "monkichi@gmail.com"
+              - column:
+                  name: name
+                  value: "Squarehead Monkichi"
+              - column:
+                  name: phone_number
+                  valueNumeric: 12345

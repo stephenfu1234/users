@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1721542683339-1
+      author: stephenfu (generated)
+      changes:
+        - update:
+            tableName: users
+            where: id = 1
+            columns:
+              - column:
+                  name: phone_number
+                  valueNumeric: 123456789

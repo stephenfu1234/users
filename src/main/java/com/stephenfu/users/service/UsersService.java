@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class UsersService {
@@ -15,7 +17,7 @@ public class UsersService {
     private UserRepository userRepository;
 
     public UserDto getUserByUserId(Integer userId) {
-        User user = new User(userId, "dummy@gmail.com", "Dummy User", 123456789);
+        User user = userRepository.findById(userId).orElseThrow();
 
         return createUserDtoFromEntity(user);
     }
@@ -26,6 +28,17 @@ public class UsersService {
         return users.stream()
                 .map(this::createUserDtoFromEntity)
                 .toList();
+    }
+
+    public void updatePhoneNumber(Integer userId, Integer newPhoneNumber) {
+        User user = userRepository.findById(userId).orElseThrow();
+        user.setPhoneNumber(newPhoneNumber);
+
+        userRepository.save(user);
+    }
+
+    public void createUser(User user) {
+        userRepository.save(user);
     }
 
     private UserDto createUserDtoFromEntity(User user) {

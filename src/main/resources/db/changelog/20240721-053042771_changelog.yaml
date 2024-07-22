@@ -1,0 +1,123 @@
+databaseChangeLog:
+- changeSet:
+    id: 1721539848050-1
+    author: stephenfu (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: revinfoPK
+            name: rev
+            type: INT
+        - column:
+            name: revtstmp
+            type: BIGINT
+        tableName: revinfo
+- changeSet:
+    id: 1721539848050-2
+    author: stephenfu (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: id
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: rev
+            type: INT
+        - column:
+            name: revtype
+            type: TINYINT
+        - column:
+            name: created_at
+            type: timestamp
+            defaultValueComputed: current_timestamp
+        - column:
+            name: created_by
+            type: VARCHAR(255)
+        - column:
+            name: email
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        - column:
+            name: phone_number
+            type: INT
+        - column:
+            name: updated_at
+            type: timestamp
+        - column:
+            name: updated_by
+            type: VARCHAR(255)
+        tableName: users_aud
+- changeSet:
+    id: 1721539848050-3
+    author: stephenfu (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: created_at
+            type: timestamp
+        tableName: users
+- changeSet:
+    id: 1721539848050-4
+    author: stephenfu (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: created_by
+            type: varchar(255)
+        tableName: users
+- changeSet:
+    id: 1721539848050-5
+    author: stephenfu (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: updated_at
+            type: timestamp
+        tableName: users
+- changeSet:
+    id: 1721539848050-6
+    author: stephenfu (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: updated_by
+            type: varchar(255)
+        tableName: users
+- changeSet:
+    id: 1721539848050-7
+    author: stephenfu (generated)
+    changes:
+    - addPrimaryKey:
+        columnNames: rev, id
+        constraintName: users_audPK
+        tableName: users_aud
+- changeSet:
+    id: 1721539848050-8
+    author: stephenfu (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: rev
+        baseTableName: users_aud
+        constraintName: FKc4vk4tui2la36415jpgm9leoq
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: rev
+        referencedTableName: revinfo
+        validate: true
+

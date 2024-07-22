@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 172154268340-1
+      author: stephen.fu
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: "pompomzoo@gmail.com"
+              - column:
+                  name: name
+                  value: "Pom Pom Zoo"
+              - column:
+                  name: phone_number
+                  valueNumeric: 987654
